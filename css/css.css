@@ -27,10 +27,11 @@ input[type=range]::-webkit-slider-thumb {
 
 
 .app{
+    vertical-align: middle;
     margin:0 auto;
     z-index: 3;
     width: 60vh;
-    height: 90vh;
+    height: 85vh;
     position: relative;
 }
 
