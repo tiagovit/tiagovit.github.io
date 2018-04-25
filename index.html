@@ -27,8 +27,27 @@
 </div>
 
 
+<button onclick="testFirebase()" >testeFirebase</button>
 
 
+
+
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAFWGscib9dXc9jpK92Qbgz4DPwpbDi1Aw",
+        authDomain: "musicplayergithub.firebaseapp.com",
+        databaseURL: "https://musicplayergithub.firebaseio.com",
+        projectId: "musicplayergithub",
+        storageBucket: "musicplayergithub.appspot.com",
+        messagingSenderId: "145524442141"
+    };
+    firebase.initializeApp(config);
+</script>
+<!-- Firebase -->
 
 </body>
 </html>

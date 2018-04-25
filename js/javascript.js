@@ -1,5 +1,18 @@
 window.onload = init;
 
+function testFirebase(){
+    var firebaseRef = firebase.database().ref();
+    var firebaseRefMusic = firebase.database().ref().child("music");
+
+    firebaseRefMusic.on('value', function (dataSnap) {
+        console.log(dataSnap.val());
+
+    })
+    console.log(firebaseRef);
+}
+
+
+
 
 function init() {
     //alert("works");
