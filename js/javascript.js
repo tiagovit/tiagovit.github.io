@@ -1,26 +1,59 @@
 window.onload = init;
 
+
+var dataSnaptadidoo;
 function testFirebase(){
     var firebaseRef = firebase.database().ref();
     var firebaseRefMusic = firebase.database().ref().child("music");
 
     firebaseRefMusic.on('value', function (dataSnap) {
         console.log(dataSnap.val());
+        dataSnaptadidoo = dataSnap.val();
 
     })
     console.log(firebaseRef);
 }
 
+function firebaseFurtherTesting(){
+    console.log(dataSnaptadidoo);
+}
 
 
 
 function init() {
-    //alert("works");
+    document.querySelector(".app").style.minHeight = (85 / 100)*window.innerHeight+"px";
+    document.querySelector(".app").style.minWidth = (60 / 100)*window.innerHeight+"px";
 document.getElementById("sliderTime").addEventListener("input",mudarCorProgresso);
+    document.getElementById("sliderTime").addEventListener("change",mudarCorProgresso);
 document.getElementById("arrowToBrowser").addEventListener("click", toggleBrowser);
 document.querySelectorAll(".controls img")[0].addEventListener("click", previousSong);
 document.querySelectorAll(".controls img")[1].addEventListener("click", pausePlaySong);
 document.querySelectorAll(".controls img")[2].addEventListener("click", nextSong);
+    setBackgroundColorWithImageColor();
+}
+
+
+//  recebe numero de 0-100
+function updateProgressMusic(percentagemProgresso) {
+    sliderElement = document.getElementById("sliderTime");
+
+    sliderElement.value = percentagemProgresso;
+
+    val = (percentagemProgresso - sliderElement.getAttribute("min")) / (sliderElement.getAttribute("max") - sliderElement.getAttribute("min"));
+
+    sliderElement.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '
+        + 'color-stop(' + val + ',' +colorProgressBar+'), '
+        + 'color-stop(' + val + ', #434343)'
+        + ')';
+}//updateProgressMusic
+
+
+function setBackgroundColorWithImageColor(){
+    var vibrant = new Vibrant(document.getElementById("albumCover"));
+    var swatches = vibrant.swatches();
+
+    document.querySelector(".player").style.background = "linear-gradient("+ColorLuminance(swatches["Vibrant"].getHex(),-0.15)+",#101010 75%)";
+    colorProgressBar = ColorLuminance(swatches["Vibrant"].getHex(),-0.05);
 
 }
 
@@ -48,7 +81,6 @@ function nextSong() {
 
 
 function toggleBrowser() {
-
     document.querySelector(".player").classList.toggle("open");
 }
 
@@ -59,10 +91,61 @@ function mudarCorProgresso(e){
     val = (e.target.value - this.getAttribute("min")) / (this.getAttribute("max") - this.getAttribute("min"));
 
     this.style.backgroundImage = '-webkit-gradient(linear, left top, right top, '
-        + 'color-stop(' + val + ', #BC493E), '
+        + 'color-stop(' + val + ',' +colorProgressBar+'), '
         + 'color-stop(' + val + ', #434343)'
         + ')';
 
+}//mudarCorProgresso
+
+function toggleVisibility(elementToToggleVisibility){
+    document.querySelector(elementToToggleVisibility).classList.toggle("visibilityHidden");
 }
 
 
+
+//------------------------Utilities---------------------------
+
+Element.prototype.remove = function() {
+    this.parentElement.removeChild(this);
+}
+NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
+    for(var i = this.length - 1; i >= 0; i--) {
+        if(this[i] && this[i].parentElement) {
+            this[i].parentElement.removeChild(this[i]);
+        }
+    }
+}
+
+/*function setBackgroundToImageColor(){
+
+ var colorThief = new ColorThief();
+
+ var sourceImage = document.getElementById("albumCover");
+
+ tempArray = colorThief.getColor(sourceImage);
+
+ //linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+ //document.querySelector(".player").style.backgroundColor = "rgb("+ tempArray[0]+","+tempArray[1]+","+tempArray[2]+")";
+ document.querySelector(".player").style.background = "linear-gradient(rgb("+ tempArray[0]+","+tempArray[1]+","+tempArray[2]+"),#101010 75%)";
+
+ }//getImageColor*/
+
+function ColorLuminance(hex, lum) {
+
+    // validate hex string
+    hex = String(hex).replace(/[^0-9a-f]/gi, '');
+    if (hex.length < 6) {
+        hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+    }
+    lum = lum || 0;
+
+    // convert to decimal and change luminosity
+    var rgb = "#", c, i;
+    for (i = 0; i < 3; i++) {
+        c = parseInt(hex.substr(i*2,2), 16);
+        c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+        rgb += ("00"+c).substr(c.length);
+    }
+
+    return rgb;
+}
