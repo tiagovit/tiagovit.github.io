@@ -50,6 +50,9 @@ function updateProgressMusic(percentagemProgresso) {
 
 
 function setBackgroundColorWithImageColor(){
+    
+    console.log("mudar cor background");
+    
     var vibrant = new Vibrant(document.getElementById("albumCover"));
     var swatches = vibrant.swatches();
     //console.log(swatches["Vibrant"].getHex());
