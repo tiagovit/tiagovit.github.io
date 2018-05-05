@@ -30,7 +30,7 @@ document.querySelectorAll(".controls img")[0].addEventListener("click", previous
 document.querySelectorAll(".controls img")[1].addEventListener("click", pausePlaySong);
 document.querySelectorAll(".controls img")[2].addEventListener("click", nextSong);
     document.getElementById("albumCover").addEventListener("load",setBackgroundColorWithImageColor);
-    //setBackgroundColorWithImageColor();
+    setBackgroundColorWithImageColor();
 }
 
 
