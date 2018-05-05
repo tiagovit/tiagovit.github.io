@@ -22,7 +22,7 @@ function firebaseFurtherTesting(){
 
 function init() {
     document.querySelector(".app").style.minHeight = (85 / 100)*window.innerHeight+"px";
-    document.querySelector(".app").style.minWidth = (60 / 100)*window.innerHeight+"px";
+    document.querySelector(".app").style.minWidth = (53 / 100)*window.innerHeight+"px";
 document.getElementById("sliderTime").addEventListener("input",mudarCorProgresso);
     document.getElementById("sliderTime").addEventListener("change",mudarCorProgresso);
 document.getElementById("arrowToBrowser").addEventListener("click", toggleBrowser);
@@ -51,9 +51,37 @@ function updateProgressMusic(percentagemProgresso) {
 function setBackgroundColorWithImageColor(){
     var vibrant = new Vibrant(document.getElementById("albumCover"));
     var swatches = vibrant.swatches();
+    //console.log(swatches["Vibrant"].getHex());
+    //console.log(swatches["Muted"].getHex());
+    //console.log(swatches["DarkVibrant"].getHex());
+    //console.log(swatches["DarkMuted"].getHex());
+    //console.log(swatches["LightVibrant"].getHex());
+    if(swatches["Vibrant"]==null){
+        if(swatches["LightVibrant"]==null){
+            if(swatches["DarkVibrant"]==null){
+                if(swatches["Muted"]==null){
+                    if(swatches["DarkMuted"]==null){
+                        hexBackgroundColor = "#191919";
+                    }else{
+                        hexBackgroundColor = swatches["DarkMuted"].getHex();
+                    }
+                }else{
+                    hexBackgroundColor = swatches["Muted"].getHex();
+                }
+            }else{
+                hexBackgroundColor = swatches["DarkVibrant"].getHex();
+            }
+        }else{
+            hexBackgroundColor = swatches["LightVibrant"].getHex();
+        }
+    }else{
+        hexBackgroundColor = swatches["Vibrant"].getHex();
+    }
+    console.log(hexBackgroundColor);
 
-    document.querySelector(".player").style.background = "linear-gradient("+ColorLuminance(swatches["Vibrant"].getHex(),-0.15)+",#101010 75%)";
-    colorProgressBar = ColorLuminance(swatches["Vibrant"].getHex(),-0.05);
+    document.querySelector("#background").style.background = "linear-gradient("+ColorLuminance(hexBackgroundColor,-0.15)+",#101010 75%)";
+    document.querySelector(".player").style.background = "linear-gradient("+ColorLuminance(hexBackgroundColor,-0.15)+",#101010 75%)";
+    colorProgressBar = ColorLuminance(hexBackgroundColor,-0.05);
 
 }
 
