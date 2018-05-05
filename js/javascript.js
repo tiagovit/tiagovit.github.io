@@ -29,7 +29,8 @@ document.getElementById("arrowToBrowser").addEventListener("click", toggleBrowse
 document.querySelectorAll(".controls img")[0].addEventListener("click", previousSong);
 document.querySelectorAll(".controls img")[1].addEventListener("click", pausePlaySong);
 document.querySelectorAll(".controls img")[2].addEventListener("click", nextSong);
-    setBackgroundColorWithImageColor();
+    document.getElementById("albumCover").addEventListener("load",setBackgroundColorWithImageColor);
+    //setBackgroundColorWithImageColor();
 }
 
 
