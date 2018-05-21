@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/login.css">
+
+    <meta charset="UTF-8">
+    <title>VitChat</title>
+
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <form class="register-form">
+            <input type="text" placeholder="name"/>
+            <input type="password" placeholder="password"/>
+            <input type="text" placeholder="email address"/>
+            <button>create</button>
+            <p class="message">Already registered? <a href="#">Sign In</a></p>
+        </form>
+        <form class="login-form">
+            <input type="text" placeholder="username"/>
+            <input type="password" placeholder="password"/>
+            <button>login</button> <div class='loading'></div>
+            <p class="message">Not registered? <a href="#">Create an account</a></p>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDjeHb_eq8mzfDM5s61Mf6rds6blmgU5F0",
+        authDomain: "vitchat2018.firebaseapp.com",
+        databaseURL: "https://vitchat2018.firebaseio.com",
+        projectId: "vitchat2018",
+        storageBucket: "vitchat2018.appspot.com",
+        messagingSenderId: "407785683676"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="js/javascript.js"></script>
+
+</body>
+</html>
