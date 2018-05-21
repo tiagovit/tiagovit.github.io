@@ -41,8 +41,17 @@ function init() {
             var errorCode = error.code;
             var errorMessage = error.message;
             // ...
-            window.alert("error:", errorMessage);
-            window.alert("code:", errorCode);
+
+
+            if(errorCode != ""){
+                switch (errorCode){
+                    case "auth/invalid-email" :
+                        ;//TODO erro de email
+                    break;
+                    
+
+                }
+            }
         });
 
     })
@@ -56,7 +65,7 @@ function init() {
 //==============================FIREBASE==============================
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-        window.location.replace("/chat.html");
+        console.log("yay logged in");
     } else {
         // No user is signed in.
     }
