@@ -46,15 +46,14 @@ function init() {
             if(errorCode != ""){
                 switch (errorCode){
                     case "auth/invalid-email" :
-                        ;//TODO erro de email
+                      console.log("invalid email")  ;//TODO erro de email
                     break;
-                    
 
                 }
             }
         });
 
-    })
+    });
 }
 
 
