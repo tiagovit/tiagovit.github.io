@@ -2,7 +2,7 @@
 
 .login-page {
     width: 360px;
-    padding: 8% 0 0;
+    padding: 3% 0 0;
     margin: auto;
 }
 .form {
@@ -15,6 +15,15 @@
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.logoTitle {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+    font-size: 400%;
+    margin-top: 124px;
+    text-shadow: 3px 2px 0px rgba(150, 150, 150, 0.8);
 }
 .form input {
     font-family: "Roboto", sans-serif;
