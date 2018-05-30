@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <script>
+        window.onload = function () {
+
+
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                theme: "light2",
+                title:{
+                    text: "Azias do Gui - Maio"
+                },
+                axisX:{
+                    valueFormatString: "DD",
+                    interval:1,
+                    intervalType: "day"
+                },
+                data: [{
+                    type: "line",
+                    dataPoints: [/*
+                            { x: new Date(2018, 1, 1), y: 2 },
+                            { x: new Date(2018, 1, 5), y: 5},
+                            { x: new Date(2018, 1, 5), y: 5},
+                            { x: new Date(2018, 1, 15), y: 0 },
+                            { x: new Date(2018, 1, 28), y: 6 }
+                        */]
+                }]
+            });
+
+
+
+
+            var database = firebase.database();
+
+
+
+
+            firebase.database().ref().child("dates").once('value').then(function(snapshot) {
+                //var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+                snapshot.forEach(function (aaaaa) {
+                    aaaaa.forEach(function (bbbbb) {
+                        //console.log(bbbbb.ref_.path.pieces_[1]);
+                        //console.log(bbbbb.val());
+
+
+
+                        chart.options.data[0].dataPoints.push({ x: new Date(bbbbb.ref_.path.pieces_[1]), y: bbbbb.val() });
+
+
+                    })
+
+
+                });
+
+                chart.render();
+
+
+            });
+
+
+
+
+
+        }
+    </script>
+    <style>
+        #chartContainer{
+            border: grey solid;
+        }
+    </style>
+</head>
+<body>
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAJ71UMLKQ54czqco2r_G1wsccAX0GbGDE",
+        authDomain: "guiaziacounter.firebaseapp.com",
+        databaseURL: "https://guiaziacounter.firebaseio.com",
+        projectId: "guiaziacounter",
+        storageBucket: "",
+        messagingSenderId: "512898809636"
+    };
+    firebase.initializeApp(config);
+</script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.canvasjs.min.js"></script>
+
+</body>
+</html>
