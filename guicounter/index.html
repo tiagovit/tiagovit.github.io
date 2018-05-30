@@ -4,6 +4,8 @@
     <script>
         window.onload = function () {
 
+            $( "#datepicker" ).datepicker();
+
 
 
             var chart = new CanvasJS.Chart("chartContainer", {
@@ -19,13 +21,7 @@
                 },
                 data: [{
                     type: "line",
-                    dataPoints: [/*
-                            { x: new Date(2018, 1, 1), y: 2 },
-                            { x: new Date(2018, 1, 5), y: 5},
-                            { x: new Date(2018, 1, 5), y: 5},
-                            { x: new Date(2018, 1, 15), y: 0 },
-                            { x: new Date(2018, 1, 28), y: 6 }
-                        */]
+                    dataPoints: []
                 }]
             });
 
@@ -69,13 +65,21 @@
         #chartContainer{
             border: grey solid;
         }
+
+        .formAzia{
+            margin-right: auto;
+            margin-right: auto;
+        }
     </style>
+    <link rel="stylesheet" href="css/jquery-ui.css">
 </head>
 <body>
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 
 
-
+<div class="formAzia">
+    <p>Date: <input type="text" id="datepicker"></p>
+</div>
 
 
 
