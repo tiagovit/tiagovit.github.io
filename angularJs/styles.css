@@ -1,0 +1,29 @@
+.avatar {
+    position: relative;
+    width: 128px;
+    height: 128px;
+    margin: 20px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    zoom: 0.5;
+}
+
+#content {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 5px;
+}
+
+md-list-item > button {
+    width: 100%;
+    text-align: left !important;
+}
+
+md-toolbar > h1 {
+    padding-left: 20px;
+}
+
+body {
+    overflow: hidden;
+}
