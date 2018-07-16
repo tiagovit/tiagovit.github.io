@@ -24,11 +24,24 @@ angular.module('MyApp',['ngMaterial'])
         $scope.dbCurrency = arr;
     });
 
+    db.collection('country').get().then((snapshot) => {
+        var dataToTargetFunction = [];
+        snapshot.docs.forEach(doc => {
+            dataToTargetFunction.push(doc.data());
+        });
+        console.log(dataToTargetFunction);
+        $scope.dbCountryFromFirestore = dataToTargetFunction;
+        $scope.$applyAsync();
+
+    });
+
+
 
 
     $scope.showListBottomSheet = function() {
         var parentEl = angular.element(document.querySelector('.red'));
         $scope.alert = '';
+
         $mdBottomSheet.show({
             disableParentScroll:true,
             parent:parentEl,
@@ -37,7 +50,6 @@ angular.module('MyApp',['ngMaterial'])
         }).then(function(clickedItem) {
             $scope.alert = clickedItem['name'] + ' clicked!';
         }).catch(function(error) {
-            // User clicked outside or hit escape
         });
     };
 

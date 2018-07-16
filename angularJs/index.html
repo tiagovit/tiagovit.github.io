@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <title>This App</title>
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script type='text/javascript' id='lt_ws' src='http://localhost:5678/socket.io/lighttable/ws.js'></script>
 </head>
 <body ng-app="MyApp" layout="column">
 
@@ -14,72 +13,58 @@
     <h1>Countries</h1>
 </md-toolbar>
 
-
 <div ng-controller="Ctrl1" ng-cloak="" class="container" layout="row" flex ng-app="MyApp">
-    <!-- Country form -->
-    <md-content class="green" flex="0">
-        <md-content layout-padding>
-            <div>
-                <form name="userForm">
 
-                    <div layout="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Country</label>
-                            <input>
-                        </md-input-container>
-
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>Capital</label>
-                            <input>
-                        </md-input-container>
-                    </div>
-
-                    <div layout="row">
-                        <md-input-container class="md-block" flex-gt-sm>
-                            <label>ISO Code</label>
-                            <md-select ng-model="countryForm.isoCode">
-                                <md-option ng-repeat="code in dbCountryCodes" value="{{code}}">
-                                    {{code}}
-                                </md-option>
-                            </md-select>
-                        </md-input-container>
-
-                        <md-input-container class="md-block" flex>
-                            <label>GDP</label>
-                            <input type="number" step="0.01">
-                            <md-icon ng-style="{'height':'12px'}" style="zoom: 0.7" md-svg-src="images/svg/euro.svg"></md-icon>
-                        </md-input-container>
-                        </div>
-
-                    <div layout="row">
-                        <md-input-container class="md-block" flex>
-                            <label>Currency</label>
-                            <md-select ng-model="countryForm.currency">
-                                <md-option ng-repeat="curr in dbCurrency" value="{{curr}}">
-                                    {{curr}}
-                                </md-option>
-                            </md-select>
-                        </md-input-container>
-
-                        <md-input-container class="md-block">
-                            <label>Population</label>
-                            <input type="number">
-                        </md-input-container>
-                    </div>
-                </form>
-            </div>
-        </md-content>
-    </md-content>
 
 
     <!-- Country list-->
-    <md-content class="md-whiteframe-4dp red"  id="content" flex style="overflow: hidden;">
-        <md-button flex class="md-primary md-raised" ng-click="showListBottomSheet()">New Country</md-button>
+    <md-content  class="red" flex="40" layout="column" style="overflow: hidden; height: 100%; width: 100%;">
+
+
+
+        <div  style="width: 100%; height: 96%; overflow-y: scroll; padding-left:  7px; padding-right: 17px; padding-bottom: 12%; box-sizing: content-box">
+            <md-card ng-repeat="countryContent in dbCountryFromFirestore">
+
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{countryContent.country}}</span>
+                        <span class="md-subhead">{{countryContent.capital}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-md card-media">
+                            <img src="https://raw.githubusercontent.com/hjnilsson/country-flags/master/png250px/{{countryContent.isoCode | lowercase}}.png">
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>more</md-button>
+                </md-card-actions>
+            </md-card>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <md-fab-speed-dial ng-mouseenter="" md-direction="up" class="md-scale md-fab-bottom-right">
+            <md-fab-trigger class="md-fab-bottom-right" >
+                <md-button  aria-label="menu" class="md-fab md-warn" ng-click="showListBottomSheet()">
+                    <md-tooltip md-direction="top" md-visible="tooltipVisible">Add country</md-tooltip>
+                    <b style="font-size: 25px; font-weight: lighter;">+</b>
+                </md-button>
+            </md-fab-trigger>
+        </md-fab-speed-dial>
     </md-content>
 
-
     <!-- Country description-->
-    <md-content class="blue" flex="45">
+    <md-content class="blue" md-whiteframe="4" flex>
+
     </md-content>
 </div>
 
@@ -90,9 +75,28 @@
 <script src="node_modules/angular-messages/angular-messages.min.js"></script>
 <script src="node_modules/angular-material/angular-material.min.js"></script>
 
+
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyD2kcCJ95NmCGXbRmCPUl-Jz1F-TE_Bieo",
+        authDomain: "firestoretestappp.firebaseapp.com",
+        databaseURL: "https://firestoretestappp.firebaseio.com",
+        projectId: "firestoretestappp",
+        storageBucket: "firestoretestappp.appspot.com",
+        messagingSenderId: "195604291792"
+    };
+    firebase.initializeApp(config);
+    const db = firebase.firestore();
+
+</script>
+
 <script src="angularjavascript.js"></script>
 <style>
-    .red{background-color: indianred}
+    .red{background-color: #fafafa}
     .blue{background-color: lightblue}
     .green{background-color: lightgreen}
 </style>

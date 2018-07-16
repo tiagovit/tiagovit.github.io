@@ -9,11 +9,7 @@
     zoom: 0.5;
 }
 
-#content {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-top: 5px;
-}
+
 
 md-list-item > button {
     width: 100%;
@@ -22,8 +18,9 @@ md-list-item > button {
 
 md-toolbar > h1 {
     padding-left: 20px;
+    color: white;
 }
 
-body {
-    overflow: hidden;
+md-toolbar {
+    background-color: #303F9F !important;
 }
