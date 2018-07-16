@@ -1,106 +1,102 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <script>
-        window.onload = function () {
 
-            $( "#datepicker" ).datepicker({
-                dateFormat: "yy-mm-dd"
-            });
-
-            $( "#slider-range-max" ).slider({
-                range: "max",
-                min: 1,
-                max: 10,
-                value: 2,
-                slide: function( event, ui ) {
-                    $( "#amount" ).val( ui.value );
-                }
-            });
-            $( "#amount" ).val( $( "#slider-range-max" ).slider( "value" ) );
-
-
-
-            var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                theme: "light2",
-                title:{
-                    text: "Azias do Gui - Maio"
-                },
-                axisX:{
-                    valueFormatString: "DD",
-                    interval:1,
-                    intervalType: "day"
-                },
-                data: [{
-                    type: "line",
-                    dataPoints: []
-                }]
-            });
-
-
-
-
-            var database = firebase.database();
-
-
-
-
-            firebase.database().ref().child("dates").once('value').then(function(snapshot) {
-                //var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-                snapshot.forEach(function (aaaaa) {
-                    aaaaa.forEach(function (bbbbb) {
-                        //console.log(bbbbb.ref_.path.pieces_[1]);
-                        //console.log(bbbbb.val());
-
-
-
-                        chart.options.data[0].dataPoints.push({ x: new Date(bbbbb.ref_.path.pieces_[1]), y: bbbbb.val() });
-
-
-                    })
-
-
-                });
-
-                chart.render();
-
-
-            });
-
-
-
-
-
-        }
-    </script>
-    <style>
-        #chartContainer{
-            border: grey solid;
-        }
-
-        .formAzia{
-            margin-right: auto;
-            margin-right: auto;
-        }
-    </style>
     <link rel="stylesheet" href="css/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 </head>
 <body>
-<div id="chartContainer" style="height: 370px; width: 100%;"></div>
 
-
-<div class="formAzia">
-    <p style="width: 50%">
-        <label style="font-size: larger" for="amount">Nivel de azia do gui</label>
-        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
-    </p>
-    <div style="width: 50%" id="slider-range-max"></div>
-    <p></p>
-    <div type="text" id="datepicker"></div>
-    <p></p>
-    <input style="width: 75px; margin-right: auto; text-align: center; margin-left: 5%; border-radius: 7px; outline: none; box-shadow: 0 0 10px #9ecaed;  border: 2px solid #9ecaed" type="image" src="img/button.jpg">
+<div id="tv"></div>
+<div id="clock">
+    <h1>20</h1>
+    <h1>:</h1>
+    <h1>14</h1>
+    <h1>:</h1>
+    <h1>32</h1>
+    <h1>:</h1>
+    <h1>59</h1>
+    <button class="btn"></button>
 </div>
+<style>
+
+    .btn {
+        background: #cc3f3f;
+        background-image: -webkit-linear-gradient(top, #cc3f3f, #eb1d1d);
+        background-image: -moz-linear-gradient(top, #cc3f3f, #eb1d1d);
+        background-image: -ms-linear-gradient(top, #cc3f3f, #eb1d1d);
+        background-image: -o-linear-gradient(top, #cc3f3f, #eb1d1d);
+        background-image: linear-gradient(to bottom, #cc3f3f, #eb1d1d);
+        -webkit-border-radius: 60;
+        -moz-border-radius: 60;
+        border-radius: 60px;
+        color: #ffffff;
+        font-size: 41px;
+        padding: 39px 19px 36px 12px;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background: #e04c4c;
+        background-image: -webkit-linear-gradient(top, #e04c4c, #d15a5a);
+        background-image: -moz-linear-gradient(top, #e04c4c, #d15a5a);
+        background-image: -ms-linear-gradient(top, #e04c4c, #d15a5a);
+        background-image: -o-linear-gradient(top, #e04c4c, #d15a5a);
+        background-image: linear-gradient(to bottom, #e04c4c, #d15a5a);
+        text-decoration: none;
+    }
+
+    #clock{
+        width: 462px;
+        height: 194px;
+        background: linear-gradient(dimgrey, black);
+        position: absolute;
+        top: 8%;
+        left: 38%;
+        text-align: center;
+
+    }
+
+    #clock h1 {
+        display: inline-block;
+        margin-right: 6%;
+        color: red;
+    }
+
+    #clock h1:nth-child(7){
+        margin-right: 0%;
+    }
+    body{
+        background: url("img/OF18OA0.jpg");
+        -webkit-box-align:center;
+        -webkit-box-pack:center;
+        display:-webkit-box;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    #tv {
+        text-align: center;
+        position: relative;
+        width: 600px;
+        height: 280px;
+        margin: 20px 0;
+        background: linear-gradient(dimgrey, black);
+        border-radius: 50% / 10%;
+        color: white;
+        text-align: center;
+        text-indent: .1em;
+    }
+    #tv:before {
+        content: '';
+        position: absolute;
+        top: 10%;
+        bottom: 10%;
+        right: -5%;
+        left: -5%;
+        background: inherit;
+        border-radius: 5% / 50%;
+    }
+</style>
 
 
 

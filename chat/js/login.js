@@ -3,6 +3,7 @@ $(document).ready(function () {
     }
 );
 
+var aaaaa;
 
 function init() {
 
@@ -162,9 +163,12 @@ firebase.auth().onAuthStateChanged(function(user) {
             $('.login-form .loading').animate({opacity: "toggle", display:"block"}, "slow").dequeue();
         });
 
-        setTimeout(function() {
+
+        aaaaa = user;
+       /* setTimeout(function() {
             window.location.href = "chat.html";
         }, 1000);
+       */
 
         //console.log(user);
 
