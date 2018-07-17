@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="425">
+              <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
               <folding>
                 <element signature="n#style#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -28,7 +28,7 @@
       <file leaf-file-name="newCountryForm.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template/newCountryForm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
+            <state relative-caret-position="850">
               <caret line="50" column="67" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
               <folding>
                 <element signature="n#style#0;n#md-icon#0;n#md-input-container#0;n#div#2;n#form#0;n#div#0;n#md-content#0;n#md-bottom-sheet#0;n#!!top" expanded="true" />
@@ -64,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angularjavascript.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="angularjavascript.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angularjavascript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2414">
-              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+            <state relative-caret-position="383">
+              <caret line="158" column="34" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -102,8 +102,8 @@
         <option value="$PROJECT_DIR$/mfb-directive.js" />
         <option value="$PROJECT_DIR$/styles.css" />
         <option value="$PROJECT_DIR$/template/newCountryForm.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/angularjavascript.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -125,6 +125,7 @@
       <path value="$PROJECT_DIR$/node_modules/angular-aria/package.json" />
       <path value="$PROJECT_DIR$/node_modules/angular-material/package.json" />
       <path value="$PROJECT_DIR$/node_modules/angular-messages/package.json" />
+      <path value="$PROJECT_DIR$/node_modules/angular-scroll/package.json" />
       <path value="$PROJECT_DIR$/node_modules/angular/package.json" />
       <path value="$PROJECT_DIR$/node_modules/array-uniq/package.json" />
       <path value="$PROJECT_DIR$/node_modules/arrify/package.json" />
@@ -249,10 +250,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1358" />
-    <option name="y" value="-321" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="1912" />
+    <option name="y" value="304" />
+    <option name="width" value="1376" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -277,21 +278,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FirestoreTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Tiago\Desktop\Projectos 4 Fun\untitled\images" />
-      <recent name="C:\Users\Tiago\Desktop\Projectos 4 Fun\untitled\images\svg" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Tiago\Desktop\Projectos 4 Fun\untitled\node_modules" />
       <recent name="C:\Users\Tiago\Desktop\Projectos 4 Fun\untitled\images\svg" />
       <recent name="C:\Users\Tiago\Desktop\Projectos 4 Fun\untitled\databases" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tiago\Desktop\Projectos 4 Fun\untitled\images" />
+      <recent name="C:\Users\Tiago\Desktop\Projectos 4 Fun\untitled\images\svg" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -321,16 +322,17 @@
       <workItem from="1531489832503" duration="10232000" />
       <workItem from="1531733939924" duration="29171000" />
       <workItem from="1531835591481" duration="8086000" />
+      <workItem from="1531851626494" duration="1395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52100000" />
+    <option name="totallyTimeSpent" value="53495000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-321" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="304" width="1376" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18976545" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18970588" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -339,16 +341,16 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.36928105" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3688394" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32838285" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +359,62 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="38" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#md-button#1;n#md-card-actions#0;n#md-card#0;n#div#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/newCountryForm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="67" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+          <folding>
+            <element signature="n#style#0;n#md-icon#0;n#md-input-container#0;n#div#2;n#form#0;n#div#0;n#md-content#0;n#md-bottom-sheet#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databases/dbCountryCodes.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/databases/dbCurrency.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2397">
+          <caret line="141" column="10" selection-start-line="141" selection-start-column="10" selection-end-line="141" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angularjavascript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2414">
+          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
@@ -554,7 +611,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/newCountryForm.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
+        <state relative-caret-position="850">
           <caret line="50" column="67" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
           <folding>
             <element signature="n#style#0;n#md-icon#0;n#md-input-container#0;n#div#2;n#form#0;n#div#0;n#md-content#0;n#md-bottom-sheet#0;n#!!top" expanded="true" />
@@ -562,22 +619,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/angularjavascript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="158" column="34" selection-start-line="158" selection-start-column="34" selection-end-line="158" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="425">
+          <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
           <folding>
             <element signature="n#style#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#md-button#1;n#md-card-actions#0;n#md-card#0;n#div#0;n#md-content#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angularjavascript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
-          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
         </state>
       </provider>
     </entry>
