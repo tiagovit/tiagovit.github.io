@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>This App</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
@@ -19,11 +20,19 @@
 
     <!-- Country list-->
     <md-content  class="red" flex="40" layout="column" style="overflow: hidden; height: 100%; width: 100%;">
+        <md-autocomplete
+                id="autoCompleteSearch"
+                placeholder="Search"
+                md-selected-item="selectedItem"
+                md-search-text="searchText"
+                md-items="countryContent in dbCountryFromFirestore"
+                md-item-text="countryContent.country">
+            <span md-highlight-text="searchText">{{countryContent.country}}</span>
+        </md-autocomplete>
+        <div style="width: 100%; height: 96%; min-width:300px; overflow-y: scroll; padding-left:  7px; padding-right: 17px; padding-top: 17px; padding-bottom: 12%; box-sizing: content-box">
 
 
-
-        <div  style="width: 100%; height: 96%; overflow-y: scroll; padding-left:  7px; padding-right: 17px; padding-bottom: 12%; box-sizing: content-box">
-            <md-card ng-repeat="countryContent in dbCountryFromFirestore">
+            <md-card ng-repeat="countryContent in dbCountryFromFirestore" id="{{countryContent.country}}">
 
                 <md-card-title>
                     <md-card-title-text>
@@ -38,6 +47,13 @@
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="end center">
                     <md-button>more</md-button>
+                    <md-button style="min-width: 1%;" ng-click="showConfirmDialog($event,countryContent.country)">
+                        <div layout="row" layout-align="center center">
+                            <i class="material-icons">
+                            delete
+                            </i>
+                        </div>
+                    </md-button>
                 </md-card-actions>
             </md-card>
 
@@ -74,7 +90,7 @@
 <script src="node_modules/angular-aria/angular-aria.min.js"></script>
 <script src="node_modules/angular-messages/angular-messages.min.js"></script>
 <script src="node_modules/angular-material/angular-material.min.js"></script>
-
+<script src="node_modules/ngInfiniteScroll-1.0.0/build/ng-infinite-scroll.js"></script>
 
 
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
@@ -93,7 +109,7 @@
     const db = firebase.firestore();
 
 </script>
-
+<script src="node_modules/angular-scroll/angular-scroll.js"></script>
 <script src="angularjavascript.js"></script>
 <style>
     .red{background-color: #fafafa}
