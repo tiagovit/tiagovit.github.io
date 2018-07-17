@@ -1,17 +1,17 @@
 <md-bottom-sheet class="md-grid" layout="column">
     <md-content layout-padding>
             <div>
-                <form name="userForm">
+                <form name="userForm" id="newCountryForm">
 
                     <div layout="row">
                         <md-input-container class="md-block" flex>
                             <label>Country</label>
-                            <input>
+                            <input name="country">
                         </md-input-container>
 
                         <md-input-container class="md-block" flex>
                             <label>Capital</label>
-                            <input>
+                            <input name="capital">
                         </md-input-container>
                     </div>
 
@@ -19,7 +19,7 @@
                         <md-input-container class="md-block" flex>
                             <label>ISO Code</label>
                             <md-select ng-model="countryForm.isoCode">
-                                <md-option ng-repeat="code in dbCountryCodes" value="{{code}}">
+                                <md-option id="isoCode" " ng-repeat="code in dbCountryCodes" value="{{code}}">
                                     {{code}}
                                 </md-option>
                             </md-select>
@@ -28,7 +28,7 @@
                         <md-input-container class="md-block" flex>
                             <label>Currency</label>
                             <md-select ng-model="countryForm.currency">
-                                <md-option ng-repeat="curr in dbCurrency" value="{{curr}}">
+                                <md-option name="currency" ng-repeat="curr in dbCurrency" value="{{curr}}">
                                     {{curr}}
                                 </md-option>
                             </md-select>
@@ -39,14 +39,19 @@
                     <div layout="row">
                         <md-input-container class="md-block" flex="30">
                             <label>GDP</label>
-                            <input type="number" step="0.01">
+                            <input name="gdp" type="number" step="0.01">
                             <md-icon ng-style="{'height':'12px'}" style="zoom: 0.7" md-svg-src="images/svg/euro.svg"></md-icon>
                         </md-input-container>
 
                         <md-input-container class="md-block" flex>
                             <label>Population</label>
-                            <input type="number">
+                            <input name="population" type="number">
                         </md-input-container>
+                    </div>
+                    <div layout="column" layout-align="center end">
+                        <md-button style="background-color: #303F9F; color: white;" ng-click=submitCountryForm()>
+                            Submit
+                        </md-button>
                     </div>
                 </form>
             </div>
